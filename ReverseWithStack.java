@@ -16,12 +16,16 @@ public class ReverseWithStack {
         // Push all characters onto the stack
         for (char ch : str.toCharArray()) {
             stack.push(ch);
+            System.out.println("Pushed: " + ch);
         }
-
+        
+        System.out.println("Starting to pop and build reversed string....");
         // Pop characters to build reversed string
         StringBuilder reversed = new StringBuilder();
         while (!stack.isEmpty()) {
-            reversed.append(stack.pop());
+            char poppedChar = stack.pop();
+            System.out.println("Popped: " + poppedChar);
+            reversed.append(poppedChar);
         }
         return reversed.toString();
     }
